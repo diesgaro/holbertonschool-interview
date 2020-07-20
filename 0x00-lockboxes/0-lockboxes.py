@@ -22,10 +22,10 @@ def canUnlockAll(boxes):
                 for key in box:
                     if key < size:
                         if key in pending:
-                            for value in boxes[index]:
-                                if not checklist[value]:
-                                    checklist[value] = True
-                                    pending.remove(key)
+                            for value in boxes[key]:
+                                if value < size:
+                                    if not checklist[value]:
+                                        checklist[value] = True
                         else:
                             checklist[key] = True
             else:
