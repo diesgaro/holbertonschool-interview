@@ -10,7 +10,8 @@
 def canUnlockAll(boxes):
     result = False
     if boxes:
-        checklist = [False] * len(boxes)
+        size = len(boxes)
+        checklist = [False] * size
         pending = list()
 
         checklist[0] = True
@@ -18,12 +19,13 @@ def canUnlockAll(boxes):
         for box in boxes:
             if checklist[boxes.index(box)]:
                 for key in box:
-                    checklist[key] = True
-                    if key in pending:
-                        for value in boxes[key]:
-                            if not checklist[value]:
-                                checklist[value] = True
-                                pending.remove(key)
+                    if key < size:
+                        checklist[key] = True
+                        if key in pending:
+                            for value in boxes[key]:
+                                if not checklist[value]:
+                                    checklist[value] = True
+                                    pending.remove(key)
             else:
                 pending.append(boxes.index(box))
 
