@@ -7,14 +7,15 @@
 def minOperations(n):
     process = 0
     aggregate = 1
+    copypaste = 0
 
     while (aggregate < n):
         if (n % aggregate == 0):
-            # print('copia y pega')
             process += 2
+            copypaste = aggregate
         else:
-            # print('pega')
             process += 1
 
-        aggregate += aggregate
+        aggregate = copypaste + aggregate
+
     return process
