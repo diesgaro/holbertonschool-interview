@@ -9,7 +9,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	if (*head != NULL || head != NULL)
+	if (*head != NULL)
 		return (_palindrome(*head, _length(*head)));
 	else
 		return (1);
