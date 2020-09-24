@@ -25,9 +25,9 @@ def validUTF8(data):
         else:
             if not (num & bit_1 and not (num & bit_2)):
                 return False
-            n_bytes -= 1
+        n_bytes -= 1
 
-    if n_bytes == 0:
-        return True
-    else:
+    if n_bytes:
         return False
+    else:
+        return True
