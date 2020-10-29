@@ -23,7 +23,7 @@ def nqueens(n):
 
 def rec_nqueens(n, queens, cord_dif, cord_sum, data):
     """
-        Function rec_nqueens
+        Recursion function that find every posible solution
     """
     p = len(queens)
 
